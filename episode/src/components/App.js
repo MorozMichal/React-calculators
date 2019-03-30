@@ -1,6 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
 
+const Result = (props) => {
+  const tempoEpisode = (props.tempoMin * 1) * 60 + (props.tempoSek * 1);
+  let timeEpisode = (tempoEpisode / 1000) * (props.distanceEpisode * 1);
+  const episodeH = Math.floor(timeEpisode / 3600);
+
+  timeEpisode = timeEpisode - episodeH * 3600;
+  const episodeMin = Math.floor(timeEpisode / 60);
+  const episodeSek = Math.round(timeEpisode - Math.round(episodeMin) * 60);
+
+  if (props.tempoMin + props.tempoSek > 0) {
+    return `${episodeH} godz ${episodeMin} min ${episodeSek} sek`;
+  } else {
+    return "PROSZĘ PODAĆ PRAWIDŁOWE DANE";
+  }
+};
+
+
 class App extends Component {
   state = {
     tempoMin: "",
@@ -50,8 +67,7 @@ class App extends Component {
         <label>Dystans odcinka:<input type="text" placeholder="metry" value={distanceEpisode} onChange={this.handleDistanceEpisode}></input></label>
         <p>{distanceEpisode}</p>
         <button onClick={this.handleReset}>wyczyść</button>
-        <p>Czas odcinka:</p>
-        <p></p>
+        <p>Czas odcinka: <Result tempoMin={tempoMin} tempoSek={tempoSek} distanceEpisode={distanceEpisode} /></p>
       </>
     );
   }

@@ -12,11 +12,18 @@ const ResultSpeed = () => {
 
 class App extends Component {
   state = {
+    selectDistance: "",
     distanceKm: "",
     distanceM: "",
     timeH: "",
     timeMin: "",
     timeSek: "",
+  }
+
+  handleSelectDistance = (e) => {
+    this.setState({
+      selectDistance: e.target.value
+    })
   }
 
   handleDistanceKm = (e) => {
@@ -51,6 +58,7 @@ class App extends Component {
 
   handleReset = () => {
     this.setState({
+      selectDistance: "",
       distanceKm: "",
       distanceM: "",
       timeH: "",
@@ -61,11 +69,11 @@ class App extends Component {
 
   render() {
 
-    const { distanceKm, distanceM, timeH, timeMin, timeSek } = this.state
+    const { selectDistance, distanceKm, distanceM, timeH, timeMin, timeSek } = this.state
     return (
       <>
         <h1>Kalkulator tempa biegu</h1>
-        <select>
+        <select onChange={this.handleSelectDistance}>
           <option value="0">Wybierz dystans</option>
           <option value="1">1 km</option>
           <option value="3">3 km</option>
@@ -77,6 +85,7 @@ class App extends Component {
           <option value="30">30 km</option>
           <option value="42.195">42.195 km (maraton)</option>
         </select>
+        <p>{selectDistance}</p>
         <fieldset>
           <legend>lub podaj</legend>
           <label><input type="text" placeholder="kilometry" value={distanceKm} onChange={this.handleDistanceKm}></input>km</label>

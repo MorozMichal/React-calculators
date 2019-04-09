@@ -10,14 +10,16 @@ class App extends Component {
   render() {
     return (
       <>
-        <Bmi />
-        <hr />
-        <Distance />
-        <hr />
-        <Episode />
-        <hr />
-        <Placeofrunning />
-        <Menu />
+        <section className="section-calculators clickAreas">
+          <div className="section-calculators-content">
+            <Bmi />
+            <Distance />
+            <Episode />
+            <Placeofrunning />
+
+          </div>
+          <Menu />
+        </section>
       </>
     );
   }

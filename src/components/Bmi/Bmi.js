@@ -26,8 +26,14 @@ class Bmi extends Component {
         })
     }
 
+
+
     render() {
         const { wzrost, waga } = this.state
+
+        const styleButton = {
+            color: "black"
+        }
         return (
             <div className="div-wrapper">
                 <h1>kalkulator bmi</h1>
@@ -35,7 +41,7 @@ class Bmi extends Component {
                 <input id="wzrost" value={wzrost} onChange={this.handleWzrost} type="text" placeholder="wpisz dane"></input>
                 <label htmlFor="waga">Podaj wagę w kg</label>
                 <input id="waga" value={waga} onChange={this.handleWaga} type="text" placeholder="wpisz dane"></input>
-                <button onClick={this.handleReset}>Wyczyść dane</button>
+                <button onClick={this.handleReset} style={styleButton}>Wyczyść dane</button>
                 <p className="info">Przy wzroście {wzrost} oraz wadze {waga} Twój współczynnik BMI wynosi:</p> <ResultBmi wzrost={wzrost} waga={waga} />
             </div>
         )

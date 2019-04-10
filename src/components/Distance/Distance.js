@@ -9,7 +9,9 @@ class Distance extends Component {
         timeH: "",
         timeMin: "",
         timeSek: "",
+
     }
+
 
     handleTempoMin = e => {
         this.setState({
@@ -48,6 +50,7 @@ class Distance extends Component {
             timeH: "",
             timeMin: "",
             timeSek: "",
+
         })
     }
 

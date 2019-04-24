@@ -90,7 +90,14 @@ class Placeofrunning extends Component {
                     <label><input type="text" placeholder="sekund" value={timeSek} onChange={this.handleTimeSek}></input>sek</label>
                 </fieldset>
                 <button onClick={this.handleReset}>wyczyść dane</button>
-                <p><ResultPlace selectDistance={selectDistance} distanceKm={distanceKm} distanceM={distanceM} timeH={timeH} timeMin={timeMin} timeSek={timeSek} /></p>
+                <ResultPlace
+                    selectDistance={selectDistance}
+                    distanceKm={distanceKm}
+                    distanceM={distanceM}
+                    timeH={timeH}
+                    timeMin={timeMin}
+                    timeSek={timeSek}
+                />
             </>
         );
     }

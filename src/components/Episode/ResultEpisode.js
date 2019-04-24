@@ -11,7 +11,7 @@ const ResultEpisode = (props) => {
 
     return (
         <>
-            <h1>{props.tempoMin + props.tempoSek > 0 ? `${episodeH} godz ${episodeMin} min ${episodeSek} sek` : `PROSZĘ PODAĆ PRAWIDŁOWE DANE`}</h1>
+            <h1>{props.tempoMin + props.tempoSek > 0 ? `Czas odcinka: ${episodeH} godz ${episodeMin} min ${episodeSek} sek` : `PROSZĘ PODAĆ PRAWIDŁOWE DANE`}</h1>
         </>
     )
 };

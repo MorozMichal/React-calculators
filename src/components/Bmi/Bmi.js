@@ -42,7 +42,11 @@ class Bmi extends Component {
                 <label htmlFor="waga">Podaj wagę w kg</label>
                 <input id="waga" value={waga} onChange={this.handleWaga} type="text" placeholder="wpisz dane"></input>
                 <button onClick={this.handleReset} style={styleButton}>Wyczyść dane</button>
-                <p className="info">Przy wzroście {wzrost} oraz wadze {waga} Twój współczynnik BMI wynosi:</p> <ResultBmi wzrost={wzrost} waga={waga} />
+                <p className="info">Przy wzroście {wzrost} oraz wadze {waga} Twój współczynnik BMI wynosi:</p>
+                <ResultBmi
+                    wzrost={wzrost}
+                    waga={waga}
+                />
             </div>
         )
     }

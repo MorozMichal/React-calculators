@@ -47,7 +47,11 @@ class Episode extends Component {
                 </fieldset>
                 <label>Dystans odcinka:<input type="text" placeholder="metry" value={distanceEpisode} onChange={this.handleDistanceEpisode}></input></label>
                 <button onClick={this.handleReset}>wyczyść dane</button>
-                <p>Czas odcinka: <ResultEpisode tempoMin={tempoMin} tempoSek={tempoSek} distanceEpisode={distanceEpisode} /></p>
+                <ResultEpisode
+                    tempoMin={tempoMin}
+                    tempoSek={tempoSek}
+                    distanceEpisode={distanceEpisode}
+                />
             </>
         );
     }

@@ -72,7 +72,13 @@ class Distance extends Component {
                     <label><input type="text" placeholder="sekund" onChange={this.handleTimeSek} value={timeSek}></input>sekund</label>
                 </fieldset>
                 <button onClick={this.handleReset}>Wyczyść dane</button>
-                <ResultDistance tempoMin={tempoMin} tempoSek={tempoSek} timeH={timeH} timeMin={timeMin} timeSek={timeSek} />
+                <ResultDistance
+                    tempoMin={tempoMin}
+                    tempoSek={tempoSek}
+                    timeH={timeH}
+                    timeMin={timeMin}
+                    timeSek={timeSek}
+                />
             </>
         );
     }

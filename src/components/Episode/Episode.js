@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ResultEpisode from './ResultEpisode'
+import Form from './Form'
+import ButtonReset from './ButtonReset'
 
 class Episode extends Component {
     state = {
@@ -40,13 +42,17 @@ class Episode extends Component {
         return (
             <>
                 <h1>Kalkulator czasu odcinka</h1>
-                <fieldset>
-                    <legend>Planowane tempo biegu</legend>
-                    <label><input type="text" placeholder="min" value={tempoMin} onChange={this.handleTempoMin}></input>min</label>
-                    <label><input type="text" placeholder="sek" value={tempoSek} onChange={this.handleTempoSek}></input>sek</label>
-                </fieldset>
-                <label>Dystans odcinka:<input type="text" placeholder="metry" value={distanceEpisode} onChange={this.handleDistanceEpisode}></input></label>
-                <button onClick={this.handleReset}>wyczyść dane</button>
+                <Form
+                    valueTempoMin={tempoMin}
+                    valueTempoSek={tempoSek}
+                    valueDistance={distanceEpisode}
+                    changeTempoMin={this.handleTempoMin}
+                    changeTempoSek={this.handleTempoSek}
+                    changeDistance={this.handleDistanceEpisode}
+                />
+                <ButtonReset
+                    click={this.handleReset}
+                />
                 <ResultEpisode
                     tempoMin={tempoMin}
                     tempoSek={tempoSek}

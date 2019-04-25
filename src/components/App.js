@@ -12,11 +12,15 @@ class App extends Component {
       <>
         <section className="section-calculators clickAreas">
           <div className="section-calculators-content">
+            <hr />
             <Bmi />
+            <hr />
             <Distance />
+            <hr />
             <Episode />
+            <hr />
             <Placeofrunning />
-
+            <hr />
           </div>
           <Menu />
         </section>

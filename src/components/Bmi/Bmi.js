@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ResultBmi from './ResultBmi'
+import ButtonReset from '../Button/ButtonReset'
+import FormBmi from './Form'
 
 class Bmi extends Component {
     state = {
@@ -27,21 +29,20 @@ class Bmi extends Component {
     }
 
 
-
     render() {
         const { wzrost, waga } = this.state
-
-        const styleButton = {
-            color: "black"
-        }
         return (
             <div className="div-wrapper">
                 <h1>kalkulator bmi</h1>
-                <label htmlFor="wzrost">Podaj wzrost w cm</label>
-                <input id="wzrost" value={wzrost} onChange={this.handleWzrost} type="text" placeholder="wpisz dane"></input>
-                <label htmlFor="waga">Podaj wagę w kg</label>
-                <input id="waga" value={waga} onChange={this.handleWaga} type="text" placeholder="wpisz dane"></input>
-                <button onClick={this.handleReset} style={styleButton}>Wyczyść dane</button>
+                <FormBmi
+                    valueWzrost={wzrost}
+                    valueWaga={waga}
+                    changeWzrost={this.handleWzrost}
+                    changeWaga={this.handleWaga}
+                />
+                <ButtonReset
+                    click={this.handleReset}
+                />
                 <p className="info">Przy wzroście {wzrost} oraz wadze {waga} Twój współczynnik BMI wynosi:</p>
                 <ResultBmi
                     wzrost={wzrost}

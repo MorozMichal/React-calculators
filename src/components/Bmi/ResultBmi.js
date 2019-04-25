@@ -1,7 +1,8 @@
 import React from 'react';
 
 const ResultBmi = (props) => {
-    let result = (props.waga / (((props.wzrost / 100) * props.wzrost) / 100)).toFixed(2)
+    const { waga, wzrost } = props
+    let result = (waga / (((wzrost / 100) * wzrost) / 100)).toFixed(2)
     if (props.waga > 0 && props.wzrost > 0) {
         if (result < 16.0) {
             result = `${result} - WYGŁODZENIE`;

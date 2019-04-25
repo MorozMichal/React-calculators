@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ResultEpisode from './ResultEpisode'
 import Form from './Form'
-import ButtonReset from './ButtonReset'
+import ButtonReset from '../Button/ButtonReset'
 
 class Episode extends Component {
     state = {

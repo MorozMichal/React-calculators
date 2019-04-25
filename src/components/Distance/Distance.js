@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ResultDistance from './ResultDistance'
+import FormDistance from './FormDistance'
+import ButtonReset from '../Button/ButtonReset'
 
 class Distance extends Component {
 
@@ -60,18 +62,25 @@ class Distance extends Component {
         return (
             <>
                 <h1>kalkulator dystansu</h1>
-                <fieldset>
-                    <legend>Planowane tempo biegu</legend>
-                    <label><input type="text" placeholder="minut" onChange={this.handleTempoMin} value={tempoMin}></input>min</label>
-                    <label><input type="text" placeholder="sekund" onChange={this.handleTempoSek} value={tempoSek}></input>sek</label>
-                </fieldset>
-                <fieldset>
-                    <legend>Planowany czas biegu</legend>
-                    <label><input type="text" placeholder="godzin" onChange={this.handleTimeH} value={timeH}></input>godzin</label>
-                    <label><input type="text" placeholder="minut" onChange={this.handleTimeMin} value={timeMin}></input>minut</label>
-                    <label><input type="text" placeholder="sekund" onChange={this.handleTimeSek} value={timeSek}></input>sekund</label>
-                </fieldset>
-                <button onClick={this.handleReset}>Wyczyść dane</button>
+
+
+                <FormDistance
+                    valueTempoMin={tempoMin}
+                    valueTempoSek={tempoSek}
+                    changeTempoMin={this.handleTempoMin}
+                    changeTempoSek={this.handleTempoSek}
+                    valueTimeH={timeH}
+                    valueTimeMin={timeMin}
+                    valueTimeSek={timeSek}
+                    changeTimeH={this.handleTimeH}
+                    changeTimeMin={this.handleTimeMin}
+                    changeTimeSek={this.handleTimeSek}
+
+                />
+
+                <ButtonReset
+                    click={this.handleReset}
+                />
                 <ResultDistance
                     tempoMin={tempoMin}
                     tempoSek={tempoSek}

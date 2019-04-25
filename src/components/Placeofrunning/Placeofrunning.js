@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ResultPlace from './ResultPlace';
+import ButtonReset from '../Button/ButtonReset'
 
 
 
@@ -89,7 +90,9 @@ class Placeofrunning extends Component {
                     <label><input type="text" placeholder="minut" value={timeMin} onChange={this.handleTimeMin}></input>min</label>
                     <label><input type="text" placeholder="sekund" value={timeSek} onChange={this.handleTimeSek}></input>sek</label>
                 </fieldset>
-                <button onClick={this.handleReset}>wyczyść dane</button>
+                <ButtonReset
+                    click={this.handleReset}
+                />
                 <ResultPlace
                     selectDistance={selectDistance}
                     distanceKm={distanceKm}

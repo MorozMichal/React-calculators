@@ -1,19 +1,38 @@
 import React from 'react'
+import TimeH from '../Inputs/Time/TimeH'
+import TimeMin from '../Inputs/Time/TimeMin'
+import TimeSec from '../Inputs/Time/TimeSec'
+import TempoMin from '../Inputs/Tempo/TempoMin'
+import TempoSec from '../Inputs/Tempo/TempoSec'
 
 const FormDistance = (props) => {
-    const { valueTimeH, valueTimeMin, valueTimeSek, valueTempoMin, valueTempoSek, changeTempoMin, changeTempoSek, changeTimeH, changeTimeMin, changeTimeSek } = props
     return (
         <>
             <fieldset>
                 <legend>Planowane tempo biegu</legend>
-                <label><input type="text" placeholder="minut" onChange={changeTempoMin} value={valueTempoMin}></input>min</label>
-                <label><input type="text" placeholder="sekund" onChange={changeTempoSek} value={valueTempoSek}></input>sek</label>
+                <TempoMin
+                    valueTempoMin={props.valueTempoMin}
+                    changeTempoMin={props.changeTempoMin}
+                />
+                <TempoSec
+                    valueTempoSec={props.valueTempoSec}
+                    changeTempoSec={props.changeTempoSec}
+                />
             </fieldset>
             <fieldset>
                 <legend>Planowany czas biegu</legend>
-                <label><input type="text" placeholder="godzin" onChange={changeTimeH} value={valueTimeH}></input>godzin</label>
-                <label><input type="text" placeholder="minut" onChange={changeTimeMin} value={valueTimeMin}></input>minut</label>
-                <label><input type="text" placeholder="sekund" onChange={changeTimeSek} value={valueTimeSek}></input>sekund</label>
+                <TimeH
+                    changeTimeH={props.changeTimeH}
+                    valueTimeH={props.valueTimeH}
+                />
+                <TimeMin
+                    changeTimeMin={props.changeTimeMin}
+                    valueTimeMin={props.valueTimeMin}
+                />
+                <TimeSec
+                    changeTimeSec={props.changeTimeSec}
+                    valueTimeSec={props.valueTimeSec}
+                />
             </fieldset>
 
         </>

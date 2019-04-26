@@ -1,19 +1,19 @@
 import React from 'react';
 
 const ResultEpisode = (props) => {
-    const { tempoMin, tempoSek, distanceEpisode } = props
+    const { tempoMin, tempoSec, distanceEpisode } = props
 
-    const tempoEpisode = (tempoMin * 1) * 60 + (tempoSek * 1);
+    const tempoEpisode = (tempoMin * 1) * 60 + (tempoSec * 1);
     let timeEpisode = (tempoEpisode / 1000) * (distanceEpisode * 1);
     const episodeH = Math.floor(timeEpisode / 3600);
 
     timeEpisode = timeEpisode - episodeH * 3600;
     const episodeMin = Math.floor(timeEpisode / 60);
-    const episodeSek = Math.round(timeEpisode - Math.round(episodeMin) * 60);
+    const episodeSec = Math.round(timeEpisode - Math.round(episodeMin) * 60);
 
     return (
         <>
-            <h1>{tempoMin + tempoSek > 0 ? `Czas odcinka: ${episodeH} godz ${episodeMin} min ${episodeSek} sek` : `PROSZĘ PODAĆ PRAWIDŁOWE DANE`}</h1>
+            <h1>{tempoMin + tempoSec > 0 ? `Czas odcinka: ${episodeH} godz ${episodeMin} min ${episodeSec} sek` : `PROSZĘ PODAĆ PRAWIDŁOWE DANE`}</h1>
         </>
     )
 };

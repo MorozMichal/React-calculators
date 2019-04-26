@@ -7,13 +7,12 @@ class Distance extends Component {
 
     state = {
         tempoMin: "",
-        tempoSek: "",
+        tempoSec: "",
         timeH: "",
         timeMin: "",
-        timeSek: "",
+        timeSec: "",
 
     }
-
 
     handleTempoMin = e => {
         this.setState({
@@ -21,9 +20,9 @@ class Distance extends Component {
         })
     }
 
-    handleTempoSek = e => {
+    handleTempoSec = e => {
         this.setState({
-            tempoSek: e.target.value
+            tempoSec: e.target.value
         })
     }
 
@@ -39,54 +38,50 @@ class Distance extends Component {
         })
     }
 
-    handleTimeSek = e => {
+    handleTimeSec = e => {
         this.setState({
-            timeSek: e.target.value
+            timeSec: e.target.value
         })
     }
 
     handleReset = () => {
         this.setState({
             tempoMin: "",
-            tempoSek: "",
+            tempoSec: "",
             timeH: "",
             timeMin: "",
-            timeSek: "",
+            timeSec: "",
 
         })
     }
 
     render() {
-        const { tempoMin, tempoSek, timeH, timeMin, timeSek } = this.state;
+        const { tempoMin, tempoSec, timeH, timeMin, timeSec } = this.state;
 
         return (
             <>
                 <h1>kalkulator dystansu</h1>
-
-
                 <FormDistance
                     valueTempoMin={tempoMin}
-                    valueTempoSek={tempoSek}
+                    valueTempoSec={tempoSec}
                     changeTempoMin={this.handleTempoMin}
-                    changeTempoSek={this.handleTempoSek}
+                    changeTempoSec={this.handleTempoSec}
                     valueTimeH={timeH}
                     valueTimeMin={timeMin}
-                    valueTimeSek={timeSek}
+                    valueTimeSec={timeSec}
                     changeTimeH={this.handleTimeH}
                     changeTimeMin={this.handleTimeMin}
-                    changeTimeSek={this.handleTimeSek}
-
+                    changeTimeSec={this.handleTimeSec}
                 />
-
                 <ButtonReset
                     click={this.handleReset}
                 />
                 <ResultDistance
                     tempoMin={tempoMin}
-                    tempoSek={tempoSek}
+                    tempoSec={tempoSec}
                     timeH={timeH}
                     timeMin={timeMin}
-                    timeSek={timeSek}
+                    timeSec={timeSec}
                 />
             </>
         );

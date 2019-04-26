@@ -6,7 +6,7 @@ import ButtonReset from '../Button/ButtonReset'
 class Episode extends Component {
     state = {
         tempoMin: "",
-        tempoSek: "",
+        tempoSec: "",
         distanceEpisode: "",
     }
 
@@ -16,9 +16,9 @@ class Episode extends Component {
         })
     }
 
-    handleTempoSek = (e) => {
+    handleTempoSec = (e) => {
         this.setState({
-            tempoSek: e.target.value
+            tempoSec: e.target.value
         })
     }
 
@@ -31,23 +31,23 @@ class Episode extends Component {
     handleReset = () => {
         this.setState({
             tempoMin: "",
-            tempoSek: "",
+            tempoSec: "",
             distanceEpisode: "",
         })
     }
 
     render() {
-        const { tempoMin, tempoSek, distanceEpisode } = this.state;
+        const { tempoMin, tempoSec, distanceEpisode } = this.state;
 
         return (
             <>
                 <h1>Kalkulator czasu odcinka</h1>
                 <Form
                     valueTempoMin={tempoMin}
-                    valueTempoSek={tempoSek}
+                    valueTempoSec={tempoSec}
                     valueDistance={distanceEpisode}
                     changeTempoMin={this.handleTempoMin}
-                    changeTempoSek={this.handleTempoSek}
+                    changeTempoSec={this.handleTempoSec}
                     changeDistance={this.handleDistanceEpisode}
                 />
                 <ButtonReset
@@ -55,7 +55,7 @@ class Episode extends Component {
                 />
                 <ResultEpisode
                     tempoMin={tempoMin}
-                    tempoSek={tempoSek}
+                    tempoSec={tempoSec}
                     distanceEpisode={distanceEpisode}
                 />
             </>

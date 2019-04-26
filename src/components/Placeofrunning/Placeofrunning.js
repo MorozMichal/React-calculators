@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ResultPlace from './ResultPlace';
 import ButtonReset from '../Button/ButtonReset'
+import FormPlace from './FormPlace'
 
 
 
@@ -62,34 +63,24 @@ class Placeofrunning extends Component {
     }
 
     render() {
-
         const { selectDistance, distanceKm, distanceM, timeH, timeMin, timeSek } = this.state
         return (
             <>
                 <h1>Kalkulator tempa biegu</h1>
-                <select value={selectDistance} onChange={this.handleSelectDistance}>
-                    <option value="0">Wybierz dystans</option>
-                    <option value="1">1 km</option>
-                    <option value="3">3 km</option>
-                    <option value="5">5 km</option>
-                    <option value="10">10 km</option>
-                    <option value="12">12 km</option>
-                    <option value="15">15 km</option>
-                    <option value="21.097">21.097 km (półmaraton)</option>
-                    <option value="30">30 km</option>
-                    <option value="42.195">42.195 km (maraton)</option>
-                </select>
-                <fieldset>
-                    <legend>lub podaj</legend>
-                    <label><input type="text" placeholder="kilometry" value={distanceKm} onChange={this.handleDistanceKm}></input>km</label>
-                    <label><input type="text" placeholder="metry" value={distanceM} onChange={this.handleDistanceM}></input>m</label>
-                </fieldset>
-                <fieldset>
-                    <legend>Planowany wynik</legend>
-                    <label><input type="text" placeholder="godzin" value={timeH} onChange={this.handleTimeH}></input>h</label>
-                    <label><input type="text" placeholder="minut" value={timeMin} onChange={this.handleTimeMin}></input>min</label>
-                    <label><input type="text" placeholder="sekund" value={timeSek} onChange={this.handleTimeSek}></input>sek</label>
-                </fieldset>
+                <FormPlace
+                    valueSelect={selectDistance}
+                    changeSelect={this.handleSelectDistance}
+                    valueDistanceKm={distanceKm}
+                    changeDistanceKm={this.handleDistanceKm}
+                    valueDistanceM={distanceM}
+                    changeDistanceM={this.handleDistanceM}
+                    valueTimeH={timeH}
+                    changeTimeH={this.handleTimeH}
+                    valueTimeMin={timeMin}
+                    changeTimeMin={this.handleTimeMin}
+                    valueTimeSek={timeSek}
+                    changeTimeSek={this.handleTimeSek}
+                />
                 <ButtonReset
                     click={this.handleReset}
                 />

@@ -40,9 +40,10 @@ class Bmi extends Component {
                     changeWzrost={this.handleWzrost}
                     changeWaga={this.handleWaga}
                 />
-                <ButtonReset
-                    click={this.handleReset}
-                />
+                {(waga || wzrost) > 0 &&
+                    <ButtonReset
+                        click={this.handleReset}
+                    />}
                 <p className="info">Przy wzroście {wzrost} oraz wadze {waga} Twój współczynnik BMI wynosi:</p>
                 <ResultBmi
                     wzrost={wzrost}

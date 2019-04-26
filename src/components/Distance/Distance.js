@@ -73,9 +73,11 @@ class Distance extends Component {
                     changeTimeMin={this.handleTimeMin}
                     changeTimeSec={this.handleTimeSec}
                 />
-                <ButtonReset
-                    click={this.handleReset}
-                />
+                {
+                    (tempoMin || tempoSec || timeH || timeMin || timeSec) > 0 &&
+                    <ButtonReset
+                        click={this.handleReset}
+                    />}
                 <ResultDistance
                     tempoMin={tempoMin}
                     tempoSec={tempoSec}

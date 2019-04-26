@@ -81,9 +81,11 @@ class Placeofrunning extends Component {
                     valueTimeSek={timeSek}
                     changeTimeSek={this.handleTimeSek}
                 />
-                <ButtonReset
-                    click={this.handleReset}
-                />
+                {(selectDistance || distanceKm || distanceM || timeH || timeMin || timeSek) > 0 &&
+                    <ButtonReset
+                        click={this.handleReset}
+                    />
+                }
                 <ResultPlace
                     selectDistance={selectDistance}
                     distanceKm={distanceKm}

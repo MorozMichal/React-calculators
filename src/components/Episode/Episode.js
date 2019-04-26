@@ -50,9 +50,11 @@ class Episode extends Component {
                     changeTempoSec={this.handleTempoSec}
                     changeDistance={this.handleDistanceEpisode}
                 />
-                <ButtonReset
-                    click={this.handleReset}
-                />
+                {(tempoMin || tempoSec || distanceEpisode) > 0 &&
+                    <ButtonReset
+                        click={this.handleReset}
+                    />
+                }
                 <ResultEpisode
                     tempoMin={tempoMin}
                     tempoSec={tempoSec}

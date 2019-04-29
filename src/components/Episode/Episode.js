@@ -10,23 +10,12 @@ class Episode extends Component {
         distanceEpisode: "",
     }
 
-    handleTempoMin = (e) => {
+    handleChange = (e) => {
         this.setState({
-            tempoMin: e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
-    handleTempoSec = (e) => {
-        this.setState({
-            tempoSec: e.target.value
-        })
-    }
-
-    handleDistanceEpisode = (e) => {
-        this.setState({
-            distanceEpisode: e.target.value
-        })
-    }
 
     handleReset = () => {
         this.setState({
@@ -46,9 +35,8 @@ class Episode extends Component {
                     valueTempoMin={tempoMin}
                     valueTempoSec={tempoSec}
                     valueDistance={distanceEpisode}
-                    changeTempoMin={this.handleTempoMin}
-                    changeTempoSec={this.handleTempoSec}
-                    changeDistance={this.handleDistanceEpisode}
+                    change={this.handleChange}
+
                 />
                 {(tempoMin || tempoSec || distanceEpisode) > 0 &&
                     <ButtonReset

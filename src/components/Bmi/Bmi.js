@@ -9,17 +9,12 @@ class Bmi extends Component {
         waga: "",
     }
 
-    handleWzrost = (e) => {
+    handleChange = (e) => {
         this.setState({
-            wzrost: e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
-    handleWaga = (e) => {
-        this.setState({
-            waga: e.target.value
-        })
-    }
 
     handleReset = () => {
         this.setState({
@@ -37,8 +32,7 @@ class Bmi extends Component {
                 <FormBmi
                     valueWzrost={wzrost}
                     valueWaga={waga}
-                    changeWzrost={this.handleWzrost}
-                    changeWaga={this.handleWaga}
+                    change={this.handleChange}
                 />
                 {(waga || wzrost) > 0 &&
                     <ButtonReset

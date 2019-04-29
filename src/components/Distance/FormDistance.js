@@ -12,25 +12,25 @@ const FormDistance = (props) => {
                 <legend>Planowane tempo biegu</legend>
                 <TempoMin
                     valueTempoMin={props.valueTempoMin}
-                    changeTempoMin={props.changeTempoMin}
+                    change={props.change}
                 />
                 <TempoSec
                     valueTempoSec={props.valueTempoSec}
-                    changeTempoSec={props.changeTempoSec}
+                    change={props.change}
                 />
             </fieldset>
             <fieldset>
                 <legend>Planowany czas biegu</legend>
                 <TimeH
-                    changeTimeH={props.changeTimeH}
+                    change={props.change}
                     valueTimeH={props.valueTimeH}
                 />
                 <TimeMin
-                    changeTimeMin={props.changeTimeMin}
+                    change={props.change}
                     valueTimeMin={props.valueTimeMin}
                 />
                 <TimeSec
-                    changeTimeSec={props.changeTimeSec}
+                    change={props.change}
                     valueTimeSec={props.valueTimeSec}
                 />
             </fieldset>

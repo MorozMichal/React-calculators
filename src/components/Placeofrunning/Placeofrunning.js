@@ -12,42 +12,12 @@ class Placeofrunning extends Component {
         distanceM: "",
         timeH: "",
         timeMin: "",
-        timeSek: "",
+        timeSec: "",
     }
 
-    handleSelectDistance = (e) => {
+    handleChange = (e) => {
         this.setState({
-            selectDistance: e.target.value
-        })
-    }
-
-    handleDistanceKm = (e) => {
-        this.setState({
-            distanceKm: e.target.value
-        })
-    }
-
-    handleDistanceM = (e) => {
-        this.setState({
-            distanceM: e.target.value
-        })
-    }
-
-    handleTimeH = (e) => {
-        this.setState({
-            timeH: e.target.value
-        })
-    }
-
-    handleTimeMin = (e) => {
-        this.setState({
-            timeMin: e.target.value
-        })
-    }
-
-    handleTimeSek = (e) => {
-        this.setState({
-            timeSek: e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
@@ -58,30 +28,26 @@ class Placeofrunning extends Component {
             distanceM: "",
             timeH: "",
             timeMin: "",
-            timeSek: "",
+            timeSec: "",
         })
     }
 
     render() {
-        const { selectDistance, distanceKm, distanceM, timeH, timeMin, timeSek } = this.state
+        const { selectDistance, distanceKm, distanceM, timeH, timeMin, timeSec } = this.state
         return (
             <>
                 <h1>Kalkulator tempa biegu</h1>
                 <FormPlace
                     valueSelect={selectDistance}
-                    changeSelect={this.handleSelectDistance}
+                    change={this.handleChange}
                     valueDistanceKm={distanceKm}
-                    changeDistanceKm={this.handleDistanceKm}
                     valueDistanceM={distanceM}
-                    changeDistanceM={this.handleDistanceM}
                     valueTimeH={timeH}
-                    changeTimeH={this.handleTimeH}
                     valueTimeMin={timeMin}
-                    changeTimeMin={this.handleTimeMin}
-                    valueTimeSek={timeSek}
-                    changeTimeSek={this.handleTimeSek}
+                    valueTimeSec={timeSec}
+
                 />
-                {(selectDistance || distanceKm || distanceM || timeH || timeMin || timeSek) > 0 &&
+                {(selectDistance || distanceKm || distanceM || timeH || timeMin || timeSec) > 0 &&
                     <ButtonReset
                         click={this.handleReset}
                     />
@@ -92,7 +58,7 @@ class Placeofrunning extends Component {
                     distanceM={distanceM}
                     timeH={timeH}
                     timeMin={timeMin}
-                    timeSek={timeSek}
+                    timeSec={timeSec}
                 />
             </>
         );

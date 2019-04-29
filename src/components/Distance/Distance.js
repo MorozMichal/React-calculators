@@ -14,35 +14,12 @@ class Distance extends Component {
 
     }
 
-    handleTempoMin = e => {
+    handleChange = e => {
         this.setState({
-            tempoMin: e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
-    handleTempoSec = e => {
-        this.setState({
-            tempoSec: e.target.value
-        })
-    }
-
-    handleTimeH = e => {
-        this.setState({
-            timeH: e.target.value
-        })
-    }
-
-    handleTimeMin = e => {
-        this.setState({
-            timeMin: e.target.value
-        })
-    }
-
-    handleTimeSec = e => {
-        this.setState({
-            timeSec: e.target.value
-        })
-    }
 
     handleReset = () => {
         this.setState({
@@ -64,14 +41,11 @@ class Distance extends Component {
                 <FormDistance
                     valueTempoMin={tempoMin}
                     valueTempoSec={tempoSec}
-                    changeTempoMin={this.handleTempoMin}
-                    changeTempoSec={this.handleTempoSec}
+                    change={this.handleChange}
                     valueTimeH={timeH}
                     valueTimeMin={timeMin}
                     valueTimeSec={timeSec}
-                    changeTimeH={this.handleTimeH}
-                    changeTimeMin={this.handleTimeMin}
-                    changeTimeSec={this.handleTimeSec}
+
                 />
                 {
                     (tempoMin || tempoSec || timeH || timeMin || timeSec) > 0 &&

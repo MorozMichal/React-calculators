@@ -3,7 +3,7 @@ import React from 'react'
 const TimeMin = (props) => {
     return (
         <>
-            <label><input type="text" placeholder="minut" onChange={props.changeTimeMin} value={props.valueTimeMin}></input>minut</label>
+            <label><input name="timeMin" type="text" placeholder="minut" onChange={props.change} value={props.valueTimeMin}></input>minut</label>
         </>
     )
 }

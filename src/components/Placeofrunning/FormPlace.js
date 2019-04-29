@@ -1,11 +1,10 @@
 import React from 'react'
 
 const FormPlace = (props) => {
-    const { valueSelect, changeSelect, valueDistanceKm, changeDistanceKm, valueDistanceM, changeDistanceM,
-        valueTimeH, changeTimeH, valueTimeMin, changeTimeMin, valueTimeSek, changeTimeSek } = props
+    const { valueSelect, valueDistanceKm, change, valueDistanceM, valueTimeH, valueTimeMin, valueTimeSec } = props
     return (
         <>
-            <select value={valueSelect} onChange={changeSelect}>
+            <select name="selectDistance" value={valueSelect} onChange={change}>
                 <option value="0">Wybierz dystans</option>
                 <option value="1">1 km</option>
                 <option value="3">3 km</option>
@@ -19,14 +18,14 @@ const FormPlace = (props) => {
             </select>
             <fieldset>
                 <legend>lub podaj</legend>
-                <label><input type="text" placeholder="kilometry" value={valueDistanceKm} onChange={changeDistanceKm}></input>km</label>
-                <label><input type="text" placeholder="metry" value={valueDistanceM} onChange={changeDistanceM}></input>m</label>
+                <label><input name="distanceKm" type="text" placeholder="kilometry" value={valueDistanceKm} onChange={change}></input>km</label>
+                <label><input name="distanceM" type="text" placeholder="metry" value={valueDistanceM} onChange={change}></input>m</label>
             </fieldset>
             <fieldset>
                 <legend>Planowany wynik</legend>
-                <label><input type="text" placeholder="godzin" value={valueTimeH} onChange={changeTimeH}></input>h</label>
-                <label><input type="text" placeholder="minut" value={valueTimeMin} onChange={changeTimeMin}></input>min</label>
-                <label><input type="text" placeholder="sekund" value={valueTimeSek} onChange={changeTimeSek}></input>sek</label>
+                <label><input name="timeH" type="text" placeholder="godzin" value={valueTimeH} onChange={change}></input>h</label>
+                <label><input name="timeMin" type="text" placeholder="minut" value={valueTimeMin} onChange={change}></input>min</label>
+                <label><input name="timeSec" type="text" placeholder="sekund" value={valueTimeSec} onChange={change}></input>sek</label>
             </fieldset>
         </>
     )
